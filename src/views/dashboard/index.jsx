@@ -21,6 +21,7 @@ import StorefrontTwoToneIcon from '@mui/icons-material/StorefrontTwoTone';
 import { Paper } from '@mui/material';
 import { Box } from '@mui/system';
 import RechargeForm from './recharge';
+import { API_BASE_URL } from 'config';
 
 // ==============================|| DEFAULT DASHBOARD ||============================== //
 
@@ -53,7 +54,7 @@ const Dashboard = () => {
   }
 }, [data])
 useEffect(() => {
-  const socket = io('http://localhost:5000'); // Replace with your server URL
+  const socket = io(API_BASE_URL); // Replace with your server URL
   setLoading(false);
   setChartData(ChartDataMonth);
   // Handle socket events

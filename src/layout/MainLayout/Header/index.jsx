@@ -23,6 +23,7 @@ import ProfileSection from './ProfileSection';
 
 // assets
 import { IconMenu2 } from '@tabler/icons-react';
+import { API_BASE_URL } from 'config';
 
 const IOSSwitch = styled((props) => (
   <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
@@ -98,7 +99,7 @@ export  function CustomizedSwitches({meter, tenant_id}) {
                 \nIf you are not sure, Please type in "yes" to continue otherwise press cancel.
                 `)
               if (response === 'yes') {
-                fetch('http://localhost:5000/power', {
+                fetch(`${API_BASE_URL}/power`, {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json'

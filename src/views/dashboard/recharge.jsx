@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Box, Button, MenuItem, Select, TextField, Typography, FormControl, InputLabel } from '@mui/material';
+import { API_BASE_URL } from 'config';
 
 const RechargeForm = () => {
   const [tenantId, setTenantId] = useState('');
@@ -17,7 +18,7 @@ const RechargeForm = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/admin/recharge', {
+      const response = await fetch(`${API_BASE_URL}/admin/recharge`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

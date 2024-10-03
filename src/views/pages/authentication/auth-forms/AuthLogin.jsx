@@ -30,6 +30,7 @@ import AnimateButton from 'ui-component/extended/AnimateButton';
 // assets
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { API_BASE_URL } from 'config';
 
 
 // ============================|| FIREBASE - LOGIN ||============================ //
@@ -73,7 +74,7 @@ const AuthLogin = ({ ...others }) => {
     const values = Object.fromEntries(data.entries());
     try {
       if (values.email.match(emailRegex)) {
-        fetch('http://localhost:5000/user/login', {
+        fetch(`${API_BASE_URL}/user/login`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
